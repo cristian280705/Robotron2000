@@ -65,13 +65,13 @@ function manipulaDados(operaçao, controle, estatistica) {
 
     const controleContador = controle.querySelector("[data-contador]");
 
-    if (operaçao === "+") {
-
+    if (operaçao === "+") {//verifica o tipo de operaçao do botao clicado pelo usuario
+        //muda a quantidade de elementos do robo de acordo com a personalizaçao do usuario.
         controleContador.value = Number(controleContador.value) + 1;
         atualizaEstatisticas(estatistica, operaçao);
 
-    } else if (operaçao === "-") {
-
+    } else if (operaçao === "-") {//verifica o tipo de operaçao do botao clicado pelo usuario
+        //muda a quantidade de elementos do robo de acordo com a personalizaçao do usuario.
         controleContador.value = Number(controleContador.value) - 1;
         atualizaEstatisticas(estatistica, operaçao);
     }
@@ -80,12 +80,12 @@ function manipulaDados(operaçao, controle, estatistica) {
 function atualizaEstatisticas (peça, operaçao) {
 
     estatisticas.forEach( (element) => {
-        if (operaçao === "+") {
-
+        if (operaçao === "+") {//verifica o tipo de operaçao do botao clicado pelo usuario
+            //muda as caracteristicas de poder do robo de acordo com o poder adicionado ou tirado.
             element.textContent = Number(element.textContent) + peças[peça][element.dataset.estatisticas];
 
-        } else if (operaçao === "-") {
-
+        } else if (operaçao === "-") {//verifica o tipo de operaçao do botao clicado pelo usuario
+            //muda as caracteristicas de poder do robo de acordo com o poder adicionado ou tirado.
             element.textContent = Number(element.textContent) - peças[peça][element.dataset.estatisticas];
         }
         
