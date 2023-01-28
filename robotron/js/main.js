@@ -61,30 +61,30 @@ controleAjuste.forEach( (element) => {
     })
 })
 
-function manipulaDados(operaçao, controle, estatistica) {
+function manipulaDados(operacao, controle, estatistica) {
 
     const controleContador = controle.querySelector("[data-contador]");
 
-    if (operaçao === "+") {//verifica o tipo de operaçao do botao clicado pelo usuario
+    if (operacao === "+" && Number(controleContador.value) >= 0) {//verifica o tipo de operaçao do botao clicado pelo usuario
         //muda a quantidade de elementos do robo de acordo com a personalizaçao do usuario.
         controleContador.value = Number(controleContador.value) + 1;
-        atualizaEstatisticas(estatistica, operaçao);
+        atualizaEstatisticas(estatistica, operacao);
 
-    } else if (operaçao === "-") {//verifica o tipo de operaçao do botao clicado pelo usuario
+    } else if (operacao === "-" && Number(controleContador.value) >= 1) {//verifica o tipo de operaçao do botao clicado pelo usuario
         //muda a quantidade de elementos do robo de acordo com a personalizaçao do usuario.
         controleContador.value = Number(controleContador.value) - 1;
-        atualizaEstatisticas(estatistica, operaçao);
+        atualizaEstatisticas(estatistica, operacao);
     }
 }
 
-function atualizaEstatisticas (peça, operaçao) {
+function atualizaEstatisticas (peça, operacao) {
 
     estatisticas.forEach( (element) => {
-        if (operaçao === "+") {//verifica o tipo de operaçao do botao clicado pelo usuario
+        if (operacao === "+") {//verifica o tipo de operaçao do botao clicado pelo usuario
             //muda as caracteristicas de poder do robo de acordo com o poder adicionado ou tirado.
             element.textContent = Number(element.textContent) + peças[peça][element.dataset.estatisticas];
 
-        } else if (operaçao === "-") {//verifica o tipo de operaçao do botao clicado pelo usuario
+        } else if (operacao === "-") {//verifica o tipo de operaçao do botao clicado pelo usuario
             //muda as caracteristicas de poder do robo de acordo com o poder adicionado ou tirado.
             element.textContent = Number(element.textContent) - peças[peça][element.dataset.estatisticas];
         }
